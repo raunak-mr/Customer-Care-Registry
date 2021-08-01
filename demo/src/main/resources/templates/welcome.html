@@ -1,0 +1,113 @@
+<html>
+<!--<head>-->
+<!--    <title>-->
+<!--        Home-->
+<!--    </title>-->
+<!--</head>-->
+<head>
+    <title>
+        ABC Help Center
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+            .background {
+                background-image: url('https://images.unsplash.com/photo-1583321500900-82807e458f3c');
+                background-position: left;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+            }
+            .blur {
+                background: rgba(255, 255, 255, 0.2);
+                filter: blur(8px);
+                backdrop-filter: blur(8px);
+            }
+            .title {
+                overflow: hidden;
+                margin: 0.5vh;
+                padding: 1vh;
+                background-color: rgba(0, 0, 0, .4);
+            }
+            .head {
+                color:white;
+                font-size: 4vh;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+            .box {
+                background-color: rgba(0, 0, 0, .4);
+                width: 35%;
+                border: none;
+                margin: 5vh;
+                padding: 5vh;
+            }
+            .boxhead {
+                color:white;
+                font-size: 6vh;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .boxcontent{
+                color:white;
+                font-size: 3vh;
+                margin: 2vh;
+            }
+            .boxcontent p{
+                color: white;
+                font-size: 2vh;
+                text-align: center;
+            }
+            input {
+                width: 100%;
+                padding: 1vh;
+                margin: 1vh 0vh;
+                box-sizing: border-box;
+            }
+            button {
+                background-color: #242526;
+                width: 100%;
+                border: none;
+                padding: 1vh;
+                margin: 1vh 0vh;
+                box-sizing: border-box;
+                color: white;
+            }
+            button:hover {
+                background-color: #444444;
+            }
+        </style>
+</head>
+
+<body style="text-align:center;font-family:verdana;background-color:lightyellow">
+<header style="background-color: #303030; height: 80px;width: 100%">
+    <h1 style="font-size: 30px;color:white;text-align:center;padding-top: 15px">
+        ABC HELP CENTER
+    </h1><br>
+    <h2>Welcome aboard, we are delighted to serve you!</h2>
+
+    <style>
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1 {background-color: #4CAF50;
+width: 25%;} /* Green */
+.button2 {background-color: #008CBA;
+width: 25%;} /* Blue */
+</style>
+    <form th:action="@{/login}" method="GET">
+        <button class="button button1">LOG IN
+        </button>
+    </form>
+    <form  th:action="@{/signup}" method="GET" >
+        <button class="button button2">SIGN UP</button>
+    </form>
+    <p> Admin? <a th:href="@{/admin}" method="GET"> AdminLogin</a> </p>
+</body>
+</html>

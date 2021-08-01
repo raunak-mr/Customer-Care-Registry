@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>ABC Help Center</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+    <style>
+        .title {
+                overflow: hidden;
+                margin: 0.5vh;
+                padding: 1vh;
+                background-color: rgba(0, 0, 0, .4);
+            }
+            .head {
+                color:white;
+                font-size: 4vh;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+            body {
+                background-color: #ffefdb;
+            }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="title">
+        <span class="head">ABC Help Center</span>
+    </div>
+    <h2>Save Complaint</h2>
+
+    <form action="#" th:action="@{/saveComplaint}" th:object="${complaint}"
+          method="POST">
+        <input type="text" th:field="*{complaintType}"
+               placeholder="Complaint Type" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{complaintDetail}"
+               placeholder="Complaint Detail" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{email}"
+               placeholder="Customer Email" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{status}"
+               placeholder="Status" class="form-control mb-4 col-4">
+
+        <button type="submit" class="btn btn-info col-2"> Save Complaint</button>
+    </form>
+
+    <hr>
+
+    <a th:href = "@{/adminhome}"> Back to Complaints List</a>
+</div>
+</body>
+</html>

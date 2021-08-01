@@ -1,0 +1,90 @@
+<html>
+<head>
+    <title>
+        Sign Up
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+            body {
+                background-color:#ffefdb;
+                background-position: left;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+            }
+            .title {
+                overflow: hidden;
+                margin: 0.5vh;
+                padding: 1vh;
+                background-color: rgba(0, 0, 0, .4);
+            }
+            .head {
+                color:white;
+                font-size: 4vh;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+            .box {
+                background-color: rgba(0, 0, 0, .4);
+                width: 80%;
+                border: none;
+                margin-top: 5vh;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 5vh;
+            }
+            .boxhead {
+                color:white;
+                font-size: 7vh;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .boxcontent{
+                color:white;
+                font-size: 3vh;
+                margin: 2vh;
+            }
+            input {
+                width: 100%;
+                padding: 1vh;
+                margin: 1vh 0vh;
+                box-sizing: border-box;
+            }
+            button {
+                background-color: #242526;
+                width: 100%;
+                border: none;
+                padding: 1vh;
+                margin: 1vh 0vh;
+                box-sizing: border-box;
+                color: white;
+            }
+            button:hover {
+                background-color: #444444;
+            }
+        </style>
+</head>
+<body>
+<div class="title">
+    <span class="head">ABC Help Center</span>
+</div>
+<div class="box">
+            <span class="boxhead">
+                <center>Sign Up</center>
+            </span>
+    <span class="boxcontent">
+                <form th:action="@{/signupSubmit}" method="POST">
+                    <label>Firstname</label>
+                    <input type="text" placeholder="ex: Rahul, Suraj..." name="firstname" size="15"/>
+                    <label>Lastname</label>
+                    <input type="text" name="lastname" placeholder="ex: Sharma, Gupta..." size="15"/>
+                    <label>Email ID</label>
+                    <input type="email" placeholder="ex: abc@example.com" name="email">
+                    <label>Password</label>
+                    <input type="password" placeholder="password" name="password">
+                    <label>Phone</label>
+                    <input type="number" placeholder="ex: 98765XXXXX" name="phone" size="10"/>
+                    <button type="submit">Sign Up</button>
+                </form>
+            </span>
+</div>
+</body>
+</html>

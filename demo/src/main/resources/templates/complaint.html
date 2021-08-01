@@ -1,0 +1,136 @@
+<html>
+<head>
+    <title>
+        ABC Help Center
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+            body {
+                background-color:#ffefdb;
+                background-position: left;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+            }
+            .title {
+                overflow: hidden;
+                margin: 0.5vh;
+                padding: 1vh;
+                background-color: rgba(0, 0, 0, .4);
+            }
+            .navbar a {
+                float: right;
+                display: block;
+                padding: 1vh 2vh;
+                color: white;
+                text-align: center;
+                font-size: 2.5vh;
+                font-family: 'Times New Roman', Times, serif;
+                text-decoration: none;
+            }
+            .navbar a:hover {
+                background: #444444;
+            }
+            .head {
+                color:white;
+                font-size: 4vh;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+            .box {
+                background-color: rgba(0, 0, 0, .4);
+                width: 80%;
+                border: none;
+                margin-top: 5vh;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 5vh;
+            }
+            .boxhead {
+                color:white;
+                font-size: 7vh;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .boxcontent{
+                color:white;
+                font-size: 3vh;
+                margin: 5vh;
+                font-family: cursive;
+                font-style: italic;
+            }
+            input {
+                width: 100%;
+                padding: 1vh;
+                margin: 1vh 0vh;
+                box-sizing: border-box;
+            }
+            button {
+                background-color: #242526;
+                width: 100%;
+                border: none;
+                padding: 1vh;
+                margin: 1vh 0vh;
+                box-sizing: border-box;
+                color: white;
+                font-size: 3vh;
+            }
+            button:hover {
+                background-color: #444444;
+            }
+            .one {
+                width: 50%;
+            }
+            .two {
+                width: 50%;
+            }
+        </style>
+</head>
+<body>
+<div class="title">
+    <span class="head">ABC Help Center</span>
+    <span class="navbar">
+<!--                <a href="/home" method="PUT">Home</a>-->
+                <a href="/login" method="GET">Logout</a>
+            </span>
+</div>
+<div class="box">
+            <span class="boxhead">
+                <center>Tell us about your Complaint</center>
+            </span><br>
+    <span class="boxcontent">
+                Need help with:
+                <ll>
+                    <li>Order not received.</li>
+                    <li>Order received is damaged.</li>
+                    <li>Return/Refund related queries.</li>
+                    <li>Account related queries.</li>
+                </ll>
+                <br>
+                <form th:action="@{/complaintSubmit}" method ="POST">
+                    <label> ComplaintType:</label>
+                    <input type="text" name="complaintType" placeholder="Ex: Order, Product, Delivery, Parcel, Return, Replace" size="50"/>	<br>
+                    <label>Complaint Details:</label>
+                    <input type="text" id="complaintDetail" placeholder="Provide Details" name="complaintDetail" />  <br>
+<!--                    <input type="text" name="details" size="50"/>-->
+                    <label>Email:</label>	<br>
+                    <input type="text" id="Email" placeholder="Use Unique Email Only" name="email" />  <br>
+                    <label>Status</label>
+                    <input type="hidden" id="Status" placeholder="Complaint Submitted" name="status" />  <br>
+                    <button type="submit" value="submit">Submit</button>
+                </form>
+                <center>Our agents will respond as soon as possible!</center>
+            </span>
+</div>
+<h2>
+    <center>
+        Need more help?
+    </center>
+</h2>
+<form th:action="@{/contactus}" method="POST">
+    <center><input class="one" style="font-size:24; color:black;" type="submit" value="CONTACT US"> </center></form>
+<h3 font face="cursive">
+    <center>Already registered complaint?</center>
+</h3>
+<center><button class="two" type="submit"><a th:href="@{/loginstatus}"><font color="white">Track Status</font></a></button> </center>
+
+</body>
+</html>

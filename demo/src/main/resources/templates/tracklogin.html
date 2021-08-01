@@ -1,0 +1,53 @@
+<html>
+<head>
+    <title>LOGIN</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <style>
+            .title {
+                overflow: hidden;
+                margin: 0.5vh;
+                padding: 1vh;
+                background-color: rgba(0, 0, 0, .4);
+            }
+            .head {
+                color:white;
+                font-size: 4vh;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+            .boxhead {
+                color:white;
+                font-size: 7vh;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .three {
+                width: 25%;
+                height: 4%;
+            }
+            .four {
+                width: 10%;
+                height: 5%;
+            }
+            body {
+                background-color: #ffefdb;
+            }
+
+    </style>
+</head>
+
+<body style="text-align:center">
+<div class="title">
+    <span class="head">ABC Help Center</span>
+</div>
+<br>
+<br>
+<br>
+<h2> Enter registered complaint Email Id: </h2>
+<div>
+    <form method="POST" th:action="@{/statushomey}">
+        <input class="three" name="email" placeholder="Email" style="font-size: 25;" type="email"><br><br>
+        <input class="four" style="font-size: 15;" type="submit">
+    </form>
+</div>
+<h3> Have a complaint? But not yet registered? <a th:href="@{/complaint}"> Register Now! </a></h3>
+</body>
+</html>

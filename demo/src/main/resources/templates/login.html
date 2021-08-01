@@ -1,0 +1,92 @@
+<html>
+<head>
+    <title>
+        ABC Help Center
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+            body {
+                background-color:#ffefdb;
+                background-position: left;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+            }
+            .blur {
+                background: rgba(255, 255, 255, 0.2);
+                filter: blur(8px);
+                backdrop-filter: blur(8px);
+            }
+            .title {
+                overflow: hidden;
+                margin: 0.5vh;
+                padding: 1vh;
+                background-color: rgba(0, 0, 0, .4);
+            }
+            .head {
+                color:white;
+                font-size: 4vh;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+            .box {
+                background-color: rgba(0, 0, 0, .4);
+                width: 35%;
+                border: none;
+                margin: 5vh;
+                padding: 5vh;
+                margin: 10rem auto;
+            }
+            .boxhead {
+                color:white;
+                font-size: 6vh;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .boxcontent{
+                color:white;
+                font-size: 3vh;
+                margin: 2vh;
+            }
+            input {
+                width: 100%;
+                padding: 1vh;
+                margin: 1vh 0vh;
+                box-sizing: border-box;
+            }
+            button {
+                background-color: #242526;
+                width: 100%;
+                border: none;
+                padding: 1vh;
+                margin: 1vh 0vh;
+                box-sizing: border-box;
+                color: white;
+            }
+            button:hover {
+                background-color: #444444;
+            }
+        </style>
+</head>
+
+<body>
+<!-- <div class="background"> -->
+<div class="blur"></div>
+<!-- </div> -->
+<div class="title">
+    <span class="head">ABC Help Center</span>
+</div>
+<div class="box">
+            <span class="boxhead">
+                <center>Login</center>
+            </span>
+    <span class="boxcontent">
+                <form th:action="@{/loginSubmit}" method="POST">
+                    <label>Email</label>
+                    <input type="text" placeholder="ex: abc@example.com" name="email">
+                    <label>Password</label>
+                    <input type="password" placeholder="password" name="password">
+                    <button type="submit">Login</button>
+                </form>
+            </span>
+</div>
+</body>
+</html>
